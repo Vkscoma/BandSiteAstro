@@ -1,0 +1,88 @@
+---
+const imageItems = [
+    {
+        ariaLabel: "Hotel Garden Band",
+        src: "/images/12wax.jpeg",
+        alt: "Hotel Garden Band",
+    },
+    {
+        ariaLabel: "Hotel Garden Band",
+        src: "/images/grid_item.webp",
+        alt: "Hotel Garden Band",
+    },
+    {
+        ariaLabel: "Hotel Garden Band",
+        src: "/images/on_the_y_2.jpeg",
+        alt: "Hotel Garden Band",
+    },
+    {
+        ariaLabel: "Hotel Garden Band",
+        src: "/images/starlett.webp",
+        alt: "Hotel Garden Band",
+    },
+    {
+        ariaLabel: "Hotel Garden Band",
+        src: "/images/cafeC.webp",
+        alt: "Hotel Garden Band",
+    },
+    {
+        ariaLabel: "Hotel Garden Band",
+        src: "/images/12wax2.webp",
+        alt: "Hotel Garden Band",
+    },
+];
+---
+
+<section class="about--content bg-third py-12 text-dark" id="about">
+    <h2 class="about--title text-center text-h2 my-8">ABOUT US</h2>
+    <div class="about--container md:grid md:grid-cols-2">
+        <img
+            class="about--img mt-4 md:h-96 m-auto md:rounded object-cover shadow-sm"
+            src="/images/HotelGardenAbout.webp"
+            alt="Hotel Garden"
+        />
+        <div class="flex flex-col justify-center">
+            <p class="about--p text-2xl p-5">
+                Hotel Garden is a Sacramento based Indie Rock band. Their
+                musical style draws inspiration from artists such as Peach Pit,
+                Turnover, and The Backseat Lovers. With each show, the band
+                strives to connect with audiences through their music and create
+                a memorable experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="container grid my-8 mx-auto gap-4 md:grid-cols-3 grid-cols-1">
+        {
+            imageItems.map((item) => {
+                return (
+                    <img
+                        src={item.src}
+                        alt={item.alt}
+                        class="hover:scale-105 transition ease-in-out duration-200 shadow-md w-full rounded-md object-cover h-80 border-8 border-white"
+                    />
+                );
+            })
+        }
+    </div>
+</section>
+
+<style>
+    @media (max-width: 450px) {
+        .about--container {
+            grid-template-columns: 1fr 1fr;
+        }
+        .about--img {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+        .about--title {
+            text-align: center;
+        }
+        .about--p {
+            margin: 1rem 0;
+            padding: 20px;
+        }
+    }
+</style>

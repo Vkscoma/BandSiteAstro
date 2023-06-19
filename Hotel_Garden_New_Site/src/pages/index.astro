@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Hotel Garden Band">
+	<section id="home" class="py-64">
+		<div class="flex justify-center">
+			<h1 class="band--logo text-7xl md:text-9xl text-center text-white">
+				HOTEL <br />GARDEN
+			</h1>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+	.band--logo {
+		font-family: "Montserrat", sans-serif;
+		font-weight: 800;
+		text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+	}
+
+	#home {
+		background-image: url("images/desktop.webp");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+
+	@media (max-width: 450px) {
+		#home {
+			background-image: url("images/hero.webp");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+	}
+</style>

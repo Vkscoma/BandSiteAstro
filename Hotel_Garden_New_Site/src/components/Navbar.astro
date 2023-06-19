@@ -1,0 +1,226 @@
+---
+const items = [
+    {
+        name: "HOME",
+        link: "#home",
+    },
+    {
+        name: "MUSIC",
+        link: "#music",
+    },
+    {
+        name: "SHOWS",
+        link: "#shows",
+    },
+    {
+        name: "ABOUT",
+        link: "#about",
+    },
+    {
+        name: "CONTACT",
+        link: "#form",
+    },
+];
+
+const socialMediaItems = [
+    {
+        name: "Instagram",
+        link: "https://www.instagram.com/hotelgardenband/",
+        icon: "fa-brands fa-instagram nav-icon-class",
+    },
+    {
+        name: "TikTok",
+        link: "https://www.tiktok.com/@hotelgardenband",
+        icon: "fa-brands fa-tiktok nav-icon-class",
+    },
+    {
+        name: "Spotify",
+        link: "https://open.spotify.com/artist/33YRDb38CEI0aA2TS5csdx?si=1uYMovQbQpG7uSgqTJB5-g",
+        icon: "fa-brands fa-spotify nav-icon-class",
+    },
+    {
+        name: "Apple Music",
+        link: "https://music.apple.com/us/artist/hotel-garden/1648459007",
+        icon: "fa-brands fa-apple nav-icon-class",
+    },
+    {
+        name: "YouTube",
+        link: "https://www.youtube.com/channel/UCLW6HCmYLTbe_Je8Q63-PMQ",
+        icon: "fa-brands fa-youtube nav-icon-class",
+    },
+];
+---
+
+<nav
+    role="navigation"
+    aria-label="Main-navigation"
+    class="hidden md:flex justify-center bg-backgroundNav p-5">
+    <ul class="hidden md:flex justify-center gap-8">
+        {
+            items.map((item) => (
+                <li class="text-xl text-light hover:text-primary transition ease-in-out duration-250 hover:ease-in-out">
+                    <a href={item.link}>{item.name}</a>
+                </li>
+            ))
+        }
+    </ul>
+    <ul
+        class="hidden md:flex justify-center gap-4 ml-8"
+        aria-label="social media List">
+        {
+            socialMediaItems.map((socialMediaItem) => {
+                return (
+                    <li class="text-xl text-light hover:text-secondary transition ease-in-out duration-250 hover:ease-in-out">
+                        <a
+                            href={socialMediaItem.link}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class={socialMediaItem.icon} />
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</nav>
+<nav
+    role="navigation"
+    aria-label="Main-navigation"
+    class="mobile--nav fixed top-0 right-0 left-0 flex justify-center bg-backgroundNav p-4 z-10">
+    <div class="flex items-center justify-end">
+        <h1 class="text-lg font-bold"><a href="#home">HOTEL GARDEN</a></h1>
+        <button
+            class="menu-button outline-none absolute right-4 top-4 z-10 w-6 h-6">
+            <span class="hamburger"></span>
+        </button>
+    </div>
+
+    <div
+        class="mobile-nav--container hidden flex justify-center flex-col fixed top-0 right-0 left-0 bottom-0 bg-black w-full h-full text-center transition-all duration-200 ease-in-out">
+        <div class="mobile-menu">
+            <ul class="flex flex-col justify-center gap-8">
+                {
+                    items.map((item) => {
+                        return (
+                            <li class="nav--links text-5xl hover:text-secondary transition ease-in-out duration-250 hover:ease-in-out">
+                                <a href={item.link}>{item.name}</a>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </div>
+        <div class="mobile-menu-social mt-14">
+            <ul class="flex justify-center gap-4">
+                {
+                    socialMediaItems.map((socialMediaItem) => {
+                        return (
+                            <li class="text-3xl hover:text-secondary transition ease-in-out duration-250 hover:ease-in-out">
+                                <a
+                                    href={socialMediaItem.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class={socialMediaItem.icon} />
+                                </a>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+    .mobile-nav--container {
+        animation: opacityChange 250ms ease-in-out;
+    }
+
+    @keyframes opacityChange {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @media (min-width: 650px) {
+        .mobile--nav {
+            display: none !important;
+        }
+
+        .mobile-nav--container {
+            display: none;
+        }
+    }
+
+    .rotate .hamburger {
+        transform: rotate(45deg);
+        transition: all 250ms ease-in-out;
+    }
+
+    .rotate .hamburger::before {
+        transform: rotate(90deg) translateX(-6px);
+        transition: all 180ms ease-in-out;
+    }
+
+    .rotate .hamburger::after {
+        opacity: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: relative;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: #fff;
+        width: 1.5rem;
+        height: 2px;
+        border-radius: 1em;
+        transition: transform 250ms ease-in-out;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .hamburger::before {
+        top: 6px;
+    }
+
+    .hamburger::after {
+        bottom: 6px;
+    }
+</style>
+<!-- Script for button functionality for mobile -->
+<script>
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelectorAll(".nav--links");
+    const mobileNavContainer = document.querySelector(".mobile-nav--container");
+
+    menuButton.addEventListener("click", () => {
+        mobileNavContainer.classList.toggle("hidden");
+        menuButton.classList.toggle("rotate");
+        document.body.classList.toggle("overflow-hidden");
+    });
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileNavContainer.classList.toggle("hidden");
+            menuButton.classList.toggle("rotate");
+            document.body.classList.toggle("overflow-hidden");
+        });
+    });
+</script>
