@@ -35,14 +35,14 @@ const imageItems = [
 
 <section class="about--content bg-third py-12 text-dark" id="about">
     <h2 class="about--title text-center text-h2 my-8">ABOUT US</h2>
-    <div class="about--container md:grid md:grid-cols-2">
+    <div class="about--container md:grid md:grid-cols-2 p-4">
         <img
-            class="about--img mt-4 md:h-96 m-auto md:rounded object-cover shadow-sm"
+            class="about--img md:h-fit m-auto md:rounded object-cover shadow-lg shadow-dark md:w-4/5"
             src="/images/HotelGardenAbout.webp"
             alt="Hotel Garden"
         />
         <div class="flex flex-col justify-center">
-            <p class="about--p text-2xl p-5">
+            <p class="about--p text-2xl">
                 Hotel Garden is a Sacramento based Indie Rock band. Their
                 musical style draws inspiration from artists such as Peach Pit,
                 Turnover, and The Backseat Lovers. With each show, the band
@@ -75,14 +75,12 @@ const imageItems = [
         .about--img {
             width: 100%;
             height: auto;
-            padding: 10px;
         }
         .about--title {
             text-align: center;
         }
         .about--p {
-            margin: 1rem 0;
-            padding: 20px;
+            margin: 2rem 0;
         }
     }
 </style>
