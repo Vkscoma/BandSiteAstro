@@ -54,39 +54,21 @@ const socialMediaItems = [
 <nav
     role="navigation"
     aria-label="Main-navigation"
-    class="hidden md:flex justify-center bg-backgroundNav p-5">
+    class="hidden md:flex justify-center p-5">
     <ul class="hidden md:flex justify-center gap-8">
         {
             items.map((item) => (
-                <li class="text-xl text-light hover:text-primary transition ease-in-out duration-250 hover:ease-in-out">
+                <li class="text-xl text-dark hover:text-secondary transition ease-in-out duration-250 hover:ease-in-out">
                     <a href={item.link}>{item.name}</a>
                 </li>
             ))
         }
     </ul>
-    <!-- <ul
-        class="hidden md:flex justify-center gap-4 ml-8"
-        aria-label="social media List">
-        {
-            socialMediaItems.map((socialMediaItem) => {
-                return (
-                    <li class="text-xl text-light hover:text-secondary transition ease-in-out duration-250 hover:ease-in-out">
-                        <a
-                            href={socialMediaItem.link}
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            <i class={socialMediaItem.icon} />
-                        </a>
-                    </li>
-                );
-            })
-        }
-    </ul> -->
 </nav>
 <nav
     role="navigation"
     aria-label="Main-navigation"
-    class="mobile--nav fixed top-0 right-0 left-0 flex justify-center bg-backgroundNav p-4 z-10">
+    class="mobile--nav fixed top-0 right-0 left-0 flex justify-center p-4 z-10 transition-all ease-in duration-200">
     <div class="flex items-center justify-end">
         <h1 class="text-lg font-bold"><a href="#home">HOTEL GARDEN</a></h1>
         <button
@@ -209,6 +191,7 @@ const socialMediaItems = [
     const menuButton = document.querySelector(".menu-button");
     const navLinks = document.querySelectorAll(".nav--links");
     const mobileNavContainer = document.querySelector(".mobile-nav--container");
+    const mobileNavHeader = document.querySelector(".mobile--nav");
 
     menuButton.addEventListener("click", () => {
         mobileNavContainer.classList.toggle("hidden");
@@ -222,5 +205,13 @@ const socialMediaItems = [
             menuButton.classList.toggle("rotate");
             document.body.classList.toggle("overflow-hidden");
         });
+    });
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            mobileNavHeader.classList.add("bg-backgroundNav");
+        } else {
+            mobileNavHeader.classList.remove("bg-backgroundNav");
+        }
     });
 </script>
