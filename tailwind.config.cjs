@@ -9,6 +9,7 @@ module.exports = {
 				third: '#F2E8E9',
 				fourth: '#697798',
 				background: '#535C71',
+				background2: '#25282a',
 				backgroundNav: '#131820',
 				light: '#F2F2F2',
 				dark: '#111111',
