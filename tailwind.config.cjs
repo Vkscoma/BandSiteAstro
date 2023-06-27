@@ -11,6 +11,7 @@ module.exports = {
 				background: '#535C71',
 				background2: '#25282a',
 				backgroundNav: '#131820',
+				buttonColor: '#29ADFF',
 				light: '#F2F2F2',
 				dark: '#111111',
 			},
