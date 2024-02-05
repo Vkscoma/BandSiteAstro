@@ -27,20 +27,12 @@ if (Astro.request.method === "POST") {
   }
 }
 
-// window.addEventListener("load", function () {
-//   const form = document.getElementById("my-form");
-//   form.addEventListener("submit", function (e) {
-//     e.preventDefault();
-//     const data = Astro.request.formData();
-//     const action = Astro.request.action;
-//     fetch(action, {
-//       method: "POST",
-//       body: data,
-//     }).then(() => {
-//       alert("Success!");
-//     });
-//   });
-// });
+window.addEventListener("load", function () {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+});
 ---
 
 <section
@@ -51,7 +43,7 @@ if (Astro.request.method === "POST") {
   <p class="text-3xl text-center my-8">
     For booking details, please reach out using the form below!
   </p>
-  <form class="flex flex-col items-center" method="post" action="">
+  <form class="flex flex-col items-center" method="post">
     <label for="name" class="text-2xl my-4">Name</label>
     <input
       type="text"
