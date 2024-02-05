@@ -1,17 +1,32 @@
 ---
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("username");
-    const email = data.get("email");
-    const message = data.get("message");
-    console.log(data);
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
+// if (Astro.request.method === "POST") {
+//   try {
+//     const data = await Astro.request.formData();
+//     const name = data.get("username");
+//     const email = data.get("email");
+//     const message = data.get("message");
+//     console.log(data);
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       console.error(error.message);
+//     }
+//   }
+// }
+
+window.addEventListener("load", function () {
+  const form = document.getElementById("my-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = Astro.request.formData();
+    const action = Astro.request.action;
+    fetch(action, {
+      method: "POST",
+      body: data,
+    }).then(() => {
+      alert("Success!");
+    });
+  });
+});
 ---
 
 <section
