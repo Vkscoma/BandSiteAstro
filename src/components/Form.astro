@@ -16,7 +16,7 @@
       type="text"
       id="name"
       name="name"
-      class="w-96 p-2 md:w-40 text-dark"
+      class="w-96 p-2 mobile--width text-dark"
       required
     />
     <label for="email" class="text-2xl my-4">Email</label>
@@ -24,7 +24,7 @@
       type="email"
       id="email"
       name="email"
-      class="w-96 p-2 md:w-40 text-dark"
+      class="w-96 p-2 mobile--width text-dark"
       required
     />
     <label
@@ -36,12 +36,19 @@
       id="message"
       name="message"
       rows="4"
-      class="block p-2.5 w-96 md:w-40 text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+      class="block p-2.5 w-96 mobile--width text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
       placeholder="Leave a message..."></textarea>
     <button
       type="submit"
-      class="bg-blue-500 text-light text-2xl p-2 my-8 hover:bg-blue-700 rounded-lg w-96 md:w-40"
+      class="bg-blue-500 text-light text-2xl p-2 my-8 hover:bg-blue-700 rounded-lg w-96 mobile--width"
       >Submit</button
     >
   </form>
+  <style>
+    @media (max-width: 768px) {
+      .mobile--width {
+        width: 12rem;
+      }
+    }
+  </style>
 </section>
