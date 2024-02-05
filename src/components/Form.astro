@@ -1,13 +1,51 @@
 ---
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  for (item of formData) {
+    console.log(item);
+  }
+});
 ---
 
-<section
-	class="flex justify-center flex-col py-32 bg-background text-light"
-	id="form">
-	<h2 class="text-center text-h2 my-4">CONTACT US</h2>
-	<p class="text-3xl text-center my-8">Reach out using the button below!</p>
-	<button
-		class="bg-buttonColor text-light p-2 rounded-md text-xl hover:bg-backgroundNav hover:text-light hover:scale-105 mx-auto transition-all ease-in-out duration-200"
-		><a href="mailto:hotelgardenband@gmail.com">Click Here</a></button
-	>
+<section class="flex justify-center flex-col py-32 bg-background text-light">
+  <h2 class="text-center text-h2 my-4">CONTACT US</h2>
+  <p class="text-3xl text-center my-8">
+    For booking details, please use the form below!
+  </p>
+  <form
+    class="flex flex-col items-center"
+    action="{{ site.contact_form_url }}"
+    method="post"
+  >
+    <input type="hidden" name="form-name" value="contact" />
+    <input
+      class="w-3/4 my-4 p-4"
+      type="text"
+      name="name"
+      placeholder="Name"
+      id="name"
+      required
+    />
+    <input
+      class="w-3/4 my-4 p-4"
+      type="email"
+      name="email"
+      placeholder="Email"
+      id="email"
+      required
+    />
+    <textarea
+      class="w-3/4 my-4 p-4"
+      name="message"
+      placeholder="Message"
+      id="message"
+      required></textarea>
+    <button class="w-3/4 my-4 p-4 bg-primary text-light" type="submit"
+      >Submit</button
+    >
+  </form>
 </section>
