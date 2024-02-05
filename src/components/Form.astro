@@ -10,7 +10,7 @@
   <p class="text-3xl text-center my-8">
     For booking details, please reach out using the form below!
   </p>
-  <form class="flex flex-col items-center">
+  <form class="flex flex-col items-center" action="hotelgardenband@gmail.com" method="POST">
     <label for="name" class="text-2xl my-4">Name</label>
     <input
       type="text"
@@ -44,16 +44,4 @@
       >Submit</button
     >
   </form>
-  <script>
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbz7Flmk_dlQFwKPpLQUQ1rJquJ04D1hpRJ-k5HOMRWUr0SOyf1ziW4aJh9U9sM8DSdR/exec";
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => console.log("Success!", response))
-        .catch((error) => console.error("Error!", error.message));
-    });
-  </script>
 </section>
