@@ -5,7 +5,7 @@ if (Astro.request.method === "POST") {
     const name = data.get("username");
     const email = data.get("email");
     const message = data.get("message");
-    const date = data.get("date");
+    console.log(data);
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -14,7 +14,10 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<section class="flex justify-center flex-col py-32 bg-background text-light">
+<section
+  class="flex justify-center flex-col py-32 bg-background text-light"
+  id="contact"
+>
   <h2 class="text-center text-h2 my-4">CONTACT US</h2>
   <p class="text-3xl text-center my-8">
     For booking details, please reach out using the form below!
