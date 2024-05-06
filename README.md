@@ -1,1 +1,1 @@
-Hotel Garden Band Test Site - Switch to Astro
+Hotel Garden Band Website: https://hotelgardenband.com/
