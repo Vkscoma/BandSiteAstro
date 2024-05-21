@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const pageTitle = "Hotel Garden Band";
@@ -12,63 +12,63 @@ import About from "../components/About.astro";
 import Form from "../components/Form.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<title>{pageTitle}</title>
-		<meta name="description" content="Hotel Garden Band Website" />
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#131820" />
-		<!-- Font Awesome-->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-		<!--Favicon-->
-		<link rel="shortcut icon" href="images/hgfavicon.png" />
-		<!-- Font Family -->
-		<!-- Favicon -->
-		<link rel="icon" href="/images/HOTELGARDENFavicon.svg" />
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content="Hotel Garden Band Website" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#131820" />
+    <!-- Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerPolicy="no-referrer"
+    />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/hgfavicon.png" />
+    <!-- Font Family -->
+    <!-- Favicon -->
+    <link rel="icon" href="/images/HOTELGARDENFavicon.svg" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 
-			* {
-				box-sizing: border-box;
-			}
+      * {
+        box-sizing: border-box;
+      }
 
-			html {
-				scroll-behavior: smooth;
-			}
+      html {
+        scroll-behavior: smooth;
+      }
 
-			body {
-				font-family: "Outfit", sans-serif;
-				color: #f2f2f2;
-				animation: fadeInAnimation ease 2.25s;
-			}
+      body {
+        font-family: "Outfit", sans-serif;
+        color: #f2f2f2;
+        animation: fadeInAnimation ease 2.25s;
+      }
 
-			@keyframes fadeInAnimation {
-				0% {
-					opacity: 0;
-				}
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0;
+        }
 
-				100% {
-					opacity: 1;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Navbar />
-		<slot />
-		<Music />
-		<Shows />
-		<About />
-		<Form />
-		<Footer />
-	</body>
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Music />
+    <Shows />
+    <About />
+    <Form />
+    <Footer />
+  </body>
 </html>
