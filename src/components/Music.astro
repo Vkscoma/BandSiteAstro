@@ -14,23 +14,15 @@ const listItems = [
     },
 ];
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        entry.target.classList.add("fade-in-up", entry.isIntersecting);
-    });
-});
-const musicSection = document.querySelector("#music");
-observer.observe(musicSection);
-
 ---
 
-<section id="music" class="music--section py-12 bg-background2">
-    <h2 class="text-center my-8 text-h2 show muisc--animation">MUSIC</h2>
-    <div class="container mx-auto flex justify-center md:w-1/2 show muisc--animation">
+<section id="music" class="music--section show muisc--animation py-12 bg-background2">
+    <h2 class="text-center my-8 text-h2 ">MUSIC</h2>
+    <div class="container mx-auto flex justify-center md:w-1/2 ">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/33YRDb38CEI0aA2TS5csdx?utm_source=generator" width="100%" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <div class="my-8 flex flex-col items-center show muisc--animation">
+    <div class="my-8 flex flex-col items-center">
         <h5 class=" text-h5">Listen</h5>
         <ul class="flex gap-4 my-4">
             {
