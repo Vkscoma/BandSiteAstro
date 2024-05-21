@@ -16,10 +16,7 @@ const listItems = [
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up");
-            observer.unobserve(entry.target);
-        }
+        entry.target.classList.add("fade-in-up", entry.isIntersecting);
     });
 });
 const musicSection = document.querySelector("#music");
@@ -28,12 +25,12 @@ observer.observe(musicSection);
 ---
 
 <section id="music" class="music--section py-12 bg-background2">
-    <h2 class="text-center my-8 text-h2">MUSIC</h2>
-    <div class="container mx-auto flex justify-center md:w-1/2">
+    <h2 class="text-center my-8 text-h2 show muisc--animation">MUSIC</h2>
+    <div class="container mx-auto flex justify-center md:w-1/2 show muisc--animation">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/33YRDb38CEI0aA2TS5csdx?utm_source=generator" width="100%" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <div class="my-8 flex flex-col items-center">
+    <div class="my-8 flex flex-col items-center show muisc--animation">
         <h5 class=" text-h5">Listen</h5>
         <ul class="flex gap-4 my-4">
             {
@@ -56,18 +53,13 @@ observer.observe(musicSection);
 </section>
 
 <style>
-    @keyframes fadeInUp {
-        from {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
+    .music--animation {
+        transform: translateY(100px);
     }
 
-    .fade-in-up {
-        animation: fadeInUp 1s ease-in-out;
+    .show {
+        opacity: 0;
+        transform: translateY(0);
+        transition: all 0.5s ease-in-out;
     }
 </style>
