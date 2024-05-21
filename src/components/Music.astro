@@ -13,6 +13,18 @@ const listItems = [
         ariaLabel: "Apple Music",
     },
 ];
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-up");
+            observer.unobserve(entry.target);
+        }
+    });
+});
+const musicSection = document.querySelector("#music");
+observer.observe(musicSection);
+
 ---
 
 <section id="music" class="music--section py-12 bg-background2">
@@ -55,7 +67,7 @@ const listItems = [
         }
     }
 
-    .music--section {
+    .fade-in-up {
         animation: fadeInUp 1s ease-in-out;
     }
 </style>
